@@ -45,8 +45,8 @@ io.on('connection', (socket) => {
   });
 
   //for del
-  socket.on('clearBoxes',async () => {
-    const {data}= await delsocketBox()       
+  socket.on('clearBoxes',async ({id}) => {
+    const {data}= await delsocketBox(id)       
     socket.emit('resultClearBoxes', {data})
   });
 

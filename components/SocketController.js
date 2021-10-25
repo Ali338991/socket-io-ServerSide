@@ -56,9 +56,8 @@ module.exports.getsocketBox = async () => {
 
 };
 
-module.exports.delsocketBox = async () => {
+module.exports.delsocketBox = async (id) => {
   try {
-    const id = "61656e7b24a37808ae6139af";
     const data = await SocketList.findByIdAndUpdate(id, {
       $set: { boxState: [] }
     }, { new: true }
